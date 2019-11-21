@@ -50,11 +50,14 @@ class Solution:
         return tmp[center - maxr:center + maxr + 1].replace('#', "")
 
 
-def main(s: str) -> None:
+def main(s: str, ans: str) -> None:
     print(f'原字符串：{s}')
     solution = Solution()
-    result = solution.longestPalindrome(s)
-    print(f'最长回文子串：{result}')
+    _s = solution.longestPalindrome(s)
+    result = True if _s == ans else False
+    print(f'是否正确：\033[0;36m{result}\033[0m')
+    print(f'正确结果：{ans}')
+    print(f'输出结果：{_s}')
     print('\t')
 
 
@@ -74,5 +77,20 @@ if __name__ == '__main__':
               'cccd',
               'ccccd',
               'cbbd']
-    for item in s_list:
-        main(item)
+    answer = ['cdc',
+              'elele',
+              'abadaba',
+              'aabcdefgfedcbaa',
+              'aba',
+              'aaaaaaaaa',
+              'elele',
+              'bb',
+              'bb',
+              'bbb',
+              'bbbb',
+              'cc',
+              'ccc',
+              'cccc',
+              'bb']
+    for i in range(len(s_list)):
+        main(s_list[i], answer[i])
