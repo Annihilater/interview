@@ -3,7 +3,7 @@
 # @Date  : 2019/11/21 16:28
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
-# @File  : 中心扩散.py
+# @File  : 中心扩散方法.py
 
 
 class Solution:
