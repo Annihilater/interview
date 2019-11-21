@@ -4,7 +4,6 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : 最长回文子串.py
-from test.test_case import get_test_case
 
 
 class Solution:
@@ -106,27 +105,47 @@ class Solution:
 #         return s[st_index: st_index + max_len]
 
 
-def main(s):
-    print(f'原始字符串：{s}')
+def main(s: str, ans: str) -> None:
+    print(f'原字符串：{s}')
     solution = Solution()
-    result = solution.longestPalindrome(s)
-    print(f'最长回文子串：{result}')
+    _s = solution.longestPalindrome(s)
+    result = True if _s == ans else False
+    print(f'是否正确：\033[0;36m{result}\033[0m')
+    print(f'正确结果：{ans}')
+    print(f'输出结果：{_s}')
     print('\t')
 
 
 if __name__ == '__main__':
-    # s = 'cabadabae'
-    # s = 'babad'
-    # s = 'ac'
-    # s = 'ccc'
-    # s = 'abb'
-    s = 'cbbd'
     s_list = ["abcdcef",
               "adaelele",
               "cabadabae",
               "aaaabcdefgfedcbaa",
               "aaba",
-              "aaaaaaaaa"]
-    # for item in s_list:
-    #     main(item)
-    main(get_test_case())
+              "aaaaaaaaa",
+              'adaelele',
+              'cbbd',
+              'abb',
+              'abbb',
+              'abbbb',
+              'ccd',
+              'cccd',
+              'ccccd',
+              'cbbd']
+    answer = ['cdc',
+              'elele',
+              'abadaba',
+              'aabcdefgfedcbaa',
+              'aba',
+              'aaaaaaaaa',
+              'elele',
+              'bb',
+              'bb',
+              'bbb',
+              'bbbb',
+              'cc',
+              'ccc',
+              'cccc',
+              'bb']
+    for i in range(len(s_list)):
+        main(s_list[i], answer[i])
