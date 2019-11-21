@@ -3,7 +3,7 @@
 # @Date  : 2019/11/21 15:11
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
-# @File  : 暴力匹配.py
+# @File  : 暴力匹配方法.py
 """
 代码没跑通
 """
