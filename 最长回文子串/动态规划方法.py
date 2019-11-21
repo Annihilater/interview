@@ -3,7 +3,7 @@
 # @Date  : 2019/11/21 19:47
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
-# @File  : 动态规划.py
+# @File  : 动态规划方法.py
 
 
 class Solution:
