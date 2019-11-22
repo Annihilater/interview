@@ -13,7 +13,7 @@ class Solution:
         先在字符串中间加符号隔开，使得奇偶回文数的形式统一
         然后用kmp的思想去优化中心扩散
         :param s: 字符串
-        :return: 最长回文子串
+        :return: 5.最长回文子串
         """
 
         if len(s) == 0:

@@ -24,7 +24,7 @@ class Solution:
             """
             返回字符串的最长回文子串
             :param s: 原字符串
-            :return: 最长回文子串
+            :return: 5.最长回文子串
             """
             if not s:
                 return ''

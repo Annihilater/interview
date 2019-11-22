@@ -3,7 +3,7 @@
 # @Date  : 2019/11/20 10:45
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
-# @File  : 最长回文子串.py
+# @File  : 5.最长回文子串.py
 
 
 class Solution:
@@ -11,7 +11,7 @@ class Solution:
         """
         返回字符串的最长回文子串
         :param s: 源字符串
-        :return: 最长回文子串
+        :return: 5.最长回文子串
         """
 
         class Record:
