@@ -18,7 +18,7 @@ def insert_sort(l: List) -> List:
     if len(l) == 0 or len(l) == 1:
         return l
 
-    for i in range(0, len(l)):  # 遍历数组，第 i 位是新数，i 之前的是已排序数组
+    for i in range(1, len(l)):  # 遍历数组，第 i 位是新数，i 之前的是已排序数组
         for j in range(i, 0, -1):  # 针对新数进行插入排序
             if l[j] < l[j - 1]:
                 l[j - 1], l[j] = l[j], l[j - 1]
