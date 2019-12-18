@@ -8,13 +8,15 @@ import copy
 import random
 from typing import List
 
+from 八大排序算法.lib.verify import verify
+
 
 def merge_sort(p: List) -> List:
     """
     归并排序，分而治之
     1.分：将序列分成两部分，针对每部分继续分，直到每部分只有一个数
     2.合：将两部分合并，依次比较每部分的首位，将较小的数保存到临时序列
-    :param l: 原序列
+    :param p: 原序列
     :return: 有序序列
     """
     if len(p) < 2:
@@ -48,46 +50,5 @@ def merge(l: List, r: List) -> List:
     return result
 
 
-def bubble_sort(l: List) -> List:
-    """
-    冒泡排序（升序）
-    :param l:源数组
-    :return:排序后的数组
-    """
-    if len(l) == 0 or len(l) == 1:
-        return l
-
-    for i in range(len(l) - 1):
-        changed = False
-        for j in range(len(l) - 1 - i):
-            if l[j] > l[j + 1]:
-                l[j], l[j + 1] = l[j + 1], l[j]
-                changed = True
-        if not changed:  # 如果遍历一次，没有发生调换，则说明数组是有序的
-            return l
-
-    return l
-
-
-def gen(m: int) -> List:
-    p = []
-    for i in range(m):
-        p.append(random.randint(0, m))
-    return p
-
-
-def main():
-    k = gen(10)
-    print(f'start: {k}')
-    result = merge_sort(k)
-    print(f'result: {result}')
-    result1 = bubble_sort(copy.deepcopy(k))
-    print(f'result1: {result1}')
-    if result1 != result:
-        print('错误')
-        raise
-
-
 if __name__ == '__main__':
-    for i in range(1000):
-        main()
+    verify(merge_sort)
