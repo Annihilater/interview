@@ -9,6 +9,8 @@ import random
 from collections import deque
 from typing import List
 
+from 八大排序算法.lib.verify import verify
+
 
 def heap_sort(k: List) -> List:
     """
@@ -57,53 +59,5 @@ def heap_adjust(l: deque, start: int, end: int) -> None:
             break
 
 
-def gen(m: int) -> List:
-    p = []
-    for i in range(m):
-        p.append(random.randint(0, m))
-    return p
-
-
-def bubble_sort(l: List) -> List:
-    """
-    冒泡排序（升序）
-    :param l:源数组
-    :return:排序后的数组
-    """
-    if len(l) == 0 or len(l) == 1:
-        return l
-
-    for i in range(len(l) - 1):
-        changed = False
-        for j in range(len(l) - 1 - i):
-            if l[j] > l[j + 1]:
-                l[j], l[j + 1] = l[j + 1], l[j]
-                changed = True
-        if not changed:  # 如果遍历一次，没有发生调换，则说明数组是有序的
-            return l
-
-    return l
-
-
-def main():
-    k = gen(10)
-    print(f'start:  {k}')
-    result = heap_sort(k)
-    print(f'result: {result}')
-    result1 = bubble_sort(copy.deepcopy(k))
-    print(f'result1: {result1}')
-    if result != result1:
-        raise
-    else:
-        print('正确')
-
-
 if __name__ == '__main__':
-    for i in range(10000):
-        main()
-    # main()
-
-    # k = [1, 3, 2, 4, 6, 1, 3, 0, 8, 9]
-    # print(k)
-    # print(bubble_sort(copy.deepcopy(k)))
-    # print(heap_sort(k))
+    verify(heap_sort)
