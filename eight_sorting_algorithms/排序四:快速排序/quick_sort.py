@@ -4,52 +4,51 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : quick_sort.py
-import random
 from typing import List
 
 from eight_sorting_algorithms.__init__ import verify
 
 
-def quick_sort(L: List) -> List:
-    return q_sort(L, 0, len(L) - 1)
+def quick_sort(l: List) -> List:
+    return q_sort(l, 0, len(l) - 1)
 
 
-def q_sort(L: List, left: int, right: int) -> List:
+def q_sort(l: List, left: int, right: int) -> List:
     """
     经典的原地快速排序
     1.先选出基准数，将比基准数小的数放在左边，比基准数大的放在右边
     2.再分别对左右进行快速排序
-    :param L: 原序列
+    :param l: 原序列
     :param left: 最小下标
     :param right: 最大下标
     :return: 有序序列
     """
     if left < right:  # 如果原序列的长度为 0 或者 1 的话，就不满足这个条件，无需排序直接返回原序列
-        pivot = partition(L, left, right)
-        q_sort(L, left, pivot - 1)
-        q_sort(L, pivot + 1, right)
-    return L
+        pivot = partition(l, left, right)
+        q_sort(l, left, pivot - 1)
+        q_sort(l, pivot + 1, right)
+    return l
 
 
-def partition(L: List, left: int, right: int) -> int:
+def partition(l: List, left: int, right: int) -> int:
     """
     找出分组标准，也就是找出基准数，返回基准数的下标
-    :param L: 原序列
+    :param l: 原序列
     :param left: 最小下标
     :param right: 最大下标
     :return: 基准数所在位置的下标
     """
-    pivot = L[left]  # 选一个基准数
+    pivot = l[left]  # 选一个基准数
 
     while left < right:  # 必须满足左指针小于右指针的条件
-        while left < right and L[right] > pivot:  # 右指针向左移，直至遇到小于等于基准数的数
+        while left < right and l[right] > pivot:  # 右指针向左移，直至遇到小于等于基准数的数
             right -= 1
-        L[left] = L[right]
-        while left < right and L[left] <= pivot:  # 左指针向右移，直至遇到大于基准数的数
+        l[left] = l[right]
+        while left < right and l[left] <= pivot:  # 左指针向右移，直至遇到大于基准数的数
             left += 1
-        L[right] = L[left]
+        l[right] = l[left]
 
-    L[left] = pivot
+    l[left] = pivot
     return left
 
 
