@@ -8,6 +8,8 @@ import copy
 import random
 from typing import List
 
+from 八大排序算法.lib.verify import verify
+
 
 def quick_sort(L: List) -> List:
     return q_sort(L, 0, len(L) - 1)
@@ -63,48 +65,19 @@ def gen_a(m: int) -> List:
     return p
 
 
-def quick_sort1(a: List) -> List:
+def simple_quick_sort(L: List) -> List:
     """
     简单版本的快速排序，选择基准数，小于基准数的放在左边，大于基准数的放在右边，在对左右两边进行快排
-    :param a: 原序列
+    :param L: 原序列
     :return:有序序列
     """
-    if len(a) < 2:
-        return a
-    l = [i for i in a[1:] if i <= a[0]]  # 小于等于 a[0] 的数放在左边
-    r = [i for i in a[1:] if i > a[0]]  # 大于 a[0] 的数放在右边
-    return quick_sort1(l) + a[0] + quick_sort1(r)
-
-
-def bubble_sort(l: List) -> List:
-    """
-    冒泡排序（升序）
-    :param l:源数组
-    :return:排序后的数组
-    """
-    if len(l) == 0 or len(l) == 1:
-        return l
-
-    for i in range(len(l) - 1):
-        changed = False
-        for j in range(len(l) - 1 - i):
-            if l[j] > l[j + 1]:
-                l[j], l[j + 1] = l[j + 1], l[j]
-                changed = True
-        if not changed:  # 如果遍历一次，没有发生调换，则说明数组是有序的
-            return l
-
-    return l
+    if len(L) < 2:
+        return L
+    l = [i for i in L[1:] if i <= L[0]]  # 小于等于 a[0] 的数放在左边
+    r = [i for i in L[1:] if i > L[0]]  # 大于 a[0] 的数放在右边
+    return simple_quick_sort(l) + [L[0]] + simple_quick_sort(r)
 
 
 if __name__ == '__main__':
-    k = gen_a(10)
-    print(f'start: {k}')
-    result = quick_sort(k)
-    result1 = bubble_sort(copy.deepcopy(k))
-    print(f'result:  {result}')
-    print(f'result1: {result1}')
-    if result == result1:
-        print('正确')
-    else:
-        print('错误')
+    verify(quick_sort)
+    verify(simple_quick_sort)
