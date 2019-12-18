@@ -4,11 +4,9 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : radix_sort.py
-import copy
-import random
 from typing import List
 
-from eight_sorting_algorithms.lib.verify import verify
+from eight_sorting_algorithms.__init__ import verify
 
 
 def radix_sort(l: List) -> List:

@@ -4,11 +4,9 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : bubble_sort.py
-import random
-import time
 from typing import List
 
-from eight_sorting_algorithms.lib.verify import verify
+from eight_sorting_algorithms.__init__ import verify
 
 
 def bubble_sort(l: List) -> List:

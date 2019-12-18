@@ -4,12 +4,10 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : heap_sort.py
-import copy
-import random
 from collections import deque
 from typing import List
 
-from eight_sorting_algorithms.lib.verify import verify
+from eight_sorting_algorithms.__init__ import verify
 
 
 def heap_sort(k: List) -> List:

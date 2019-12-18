@@ -4,12 +4,9 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : shell_sort.py
-import copy
-import random
-import time
 from typing import List
 
-from eight_sorting_algorithms.lib.verify import verify
+from eight_sorting_algorithms.__init__ import verify
 
 
 def shell_sort(l: List) -> List:

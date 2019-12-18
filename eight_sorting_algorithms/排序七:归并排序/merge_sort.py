@@ -4,11 +4,9 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : merge_sort.py
-import copy
-import random
 from typing import List
 
-from eight_sorting_algorithms.lib.verify import verify
+from eight_sorting_algorithms.__init__ import verify
 
 
 def merge_sort(p: List) -> List:
