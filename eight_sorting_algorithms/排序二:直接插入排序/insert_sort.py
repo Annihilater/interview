@@ -4,7 +4,6 @@
 # @Author: yanmiexingkong
 # @email : yanmiexingkong@gmail.com
 # @File  : insert_sort.py
-import random
 from typing import List
 
 from eight_sorting_algorithms import verify
@@ -21,9 +20,8 @@ def insert_sort(l: List) -> List:
 
     for i in range(0, len(l)):  # 遍历数组，第 i 位是新数，i 之前的是已排序数组
         for j in range(i, 0, -1):  # 针对新数进行插入排序
-            if j > 0:
-                if l[j] < l[j - 1]:
-                    l[j - 1], l[j] = l[j], l[j - 1]
+            if l[j] < l[j - 1]:
+                l[j - 1], l[j] = l[j], l[j - 1]
     return l
 
 
