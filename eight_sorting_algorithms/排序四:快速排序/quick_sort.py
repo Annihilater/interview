@@ -53,17 +53,6 @@ def partition(L: List, left: int, right: int) -> int:
     return left
 
 
-def gen_a(m: int) -> List:
-    """
-    生成随机序列
-    :return:列表
-    """
-    p = []
-    for i in range(m):
-        p.append(random.randint(0, m))
-    return p
-
-
 def simple_quick_sort(L: List) -> List:
     """
     简单版本的快速排序，选择基准数，小于基准数的放在左边，大于基准数的放在右边，在对左右两边进行快排
