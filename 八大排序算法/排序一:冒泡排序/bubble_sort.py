@@ -8,6 +8,8 @@ import random
 import time
 from typing import List
 
+from 八大排序算法.lib.verify import verify
+
 
 def bubble_sort(l: List) -> List:
     """
@@ -30,16 +32,5 @@ def bubble_sort(l: List) -> List:
     return l
 
 
-def main():
-    n = []
-    m = 1000
-    for i in range(m):  # 生成随机数组
-        n.append(random.randint(0, m))
-    start = time.perf_counter()
-    result = bubble_sort(n)
-    print(result)
-    print(time.perf_counter() - start)
-
-
 if __name__ == '__main__':
-    main()
+    verify(bubble_sort)
