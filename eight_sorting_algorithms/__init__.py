@@ -36,13 +36,12 @@ def insert_sort(l: List) -> List:
 
 def verify(func):
     """
-    校验排序算法的正确性
+    随机生成长度的 10 的序列校验排序算法的正确性，共校验 10000 次
     1.使用直接插入算法校验其他算法
     2.使用冒泡排序算法校验直接插入算法
     :param func: 待校验的排序算法
     :return:
     """
-
     if func.__name__ == 'insert_sort':
         verify_func = eval('bubble_sort')
         print('Using bubble_sort verify.')
@@ -52,14 +51,17 @@ def verify(func):
 
     for i in range(10000):
         k = []
-        m = 10
+        m = 10000
         for i in range(10):
             k.append(random.randint(0, m))
         # print(f'start: {k}')
         start = time.perf_counter()
         result1 = func(k)
-        # print(f'result: {result1}')
         result2 = verify_func(copy.deepcopy(k))
+
+        # print(f'result1: {result1}')
+        # print(f'result2: {result2}')
+
         if result1 != result2:
             print('The algorithm is wrong!!!')
             raise
