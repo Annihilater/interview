@@ -53,17 +53,17 @@ def partition(L: List, left: int, right: int) -> int:
     return left
 
 
-def simple_quick_sort(L: List) -> List:
+def simple_quick_sort(l: List) -> List:
     """
     简单版本的快速排序，选择基准数，小于基准数的放在左边，大于基准数的放在右边，在对左右两边进行快排
-    :param L: 原序列
+    :param l: 原序列
     :return:有序序列
     """
-    if len(L) < 2:
-        return L
-    l = [i for i in L[1:] if i <= L[0]]  # 小于等于 a[0] 的数放在左边
-    r = [i for i in L[1:] if i > L[0]]  # 大于 a[0] 的数放在右边
-    return simple_quick_sort(l) + [L[0]] + simple_quick_sort(r)
+    if len(l) < 2:
+        return l
+    left = [i for i in l[1:] if i <= l[0]]  # 小于等于 a[0] 的数放在左边
+    right = [i for i in l[1:] if i > l[0]]  # 大于 a[0] 的数放在右边
+    return simple_quick_sort(left) + [l[0]] + simple_quick_sort(right)
 
 
 if __name__ == '__main__':
