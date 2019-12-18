@@ -10,6 +10,20 @@ import time
 from typing import List
 
 
+def bubble_sort(l: List) -> List:
+    if len(l) == 0 or len(l) == 1:
+        return l
+    for i in range(len(l) - 1):
+        changed = False
+        for j in range(len(l) - 1 - i):
+            if l[j] > l[j + 1]:
+                l[j], l[j + 1] = l[j + 1], l[j]
+                changed = True
+        if not changed:
+            return l
+    return l
+
+
 def insert_sort(l: List) -> List:
     if len(l) == 0 or len(l) == 1:
         return l
@@ -21,6 +35,21 @@ def insert_sort(l: List) -> List:
 
 
 def verify(func):
+    """
+    校验排序算法的正确性
+    1.使用直接插入算法校验其他算法
+    2.使用冒泡排序算法校验直接插入算法
+    :param func: 待校验的排序算法
+    :return:
+    """
+
+    if func.__name__ == 'insert_sort':
+        verify_func = eval('bubble_sort')
+        print('Using bubble_sort verify.')
+    else:
+        verify_func = eval('insert_sort')
+        print('Using insert_sort verify.')
+
     for i in range(10000):
         k = []
         m = 10
@@ -30,13 +59,13 @@ def verify(func):
         start = time.perf_counter()
         result1 = func(k)
         # print(f'result: {result1}')
-        result2 = insert_sort(copy.deepcopy(k))
+        result2 = verify_func(copy.deepcopy(k))
         if result1 != result2:
-            print('算法错误')
+            print('The algorithm is wrong!!!')
             raise
         # print(time.perf_counter() - start)
-    print('算法正确')
+    print('The algorithm is correct!!!')
 
 
 if __name__ == '__main__':
-    verify()
+    verify(insert_sort)
