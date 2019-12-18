@@ -8,7 +8,7 @@ import copy
 import random
 from typing import List
 
-from 八大排序算法.lib.verify import verify
+from eight_sorting_algorithms.lib.verify import verify
 
 
 def select_sort(l: List) -> List:

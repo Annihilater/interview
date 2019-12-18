@@ -9,7 +9,7 @@ import random
 from collections import deque
 from typing import List
 
-from 八大排序算法.lib.verify import verify
+from eight_sorting_algorithms.lib.verify import verify
 
 
 def heap_sort(k: List) -> List:
