@@ -7,6 +7,8 @@
 import random
 from typing import List
 
+from eight_sorting_algorithms import verify
+
 
 def insert_sort(l: List) -> List:
     """
@@ -26,10 +28,4 @@ def insert_sort(l: List) -> List:
 
 
 if __name__ == '__main__':
-    k = []
-    m = 10
-    for i in range(m):
-        k.append(random.randint(0, m))
-    print(k)
-    result = insert_sort(k)
-    print(result)
+    verify(insert_sort)
