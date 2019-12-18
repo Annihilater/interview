@@ -22,6 +22,8 @@ def insert_sort(l: List) -> List:
         for j in range(i, 0, -1):  # 针对新数进行插入排序
             if l[j] < l[j - 1]:
                 l[j - 1], l[j] = l[j], l[j - 1]
+            else:
+                break
     return l
 
 
